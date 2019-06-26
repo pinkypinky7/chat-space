@@ -30,7 +30,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false, foreign_key: true, unique: true|
+|name|string|index: true, null: false, unique: true|
 |mail|string|null: false, unique: true|
 
 ### Association
