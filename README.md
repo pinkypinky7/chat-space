@@ -15,7 +15,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
@@ -31,7 +31,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, foreign_key: true, unique: true|
-|mail|string|null: false, foreign_key: true, unique: true|
+|mail|string|null: false, unique: true|
 
 ### Association
 - has_many :members
@@ -45,7 +45,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+
 ### Association
 - has_many :members
 - has_many :users,through: :members
