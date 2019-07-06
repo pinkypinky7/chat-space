@@ -1,0 +1,58 @@
+.Top_bar
+  グループを作成しました
+.Header.clearfix
+  .Header__user
+    .Header__user__name
+      test-user
+    =link_to "", class: "Header__user__set" do
+      =fa_icon 'cog'  
+    =link_to "", class: "Header__user__edit" do
+      =fa_icon 'edit'
+ 
+
+  .Header__group
+    .Header__group__name
+      test_group
+    .Header__group__member
+      Member:test-user
+    =link_to "", class: "Header__group__edit" do
+      Edit
+
+.Groups
+  .Groups__name_top
+    test-group
+  .Groups__first_message
+    さようなら
+  .Groups__name
+    sample-group
+  .Groups__first_message
+    hello!
+  .Groups__name
+    example
+  .Groups__first_message
+    まだメッセージがありません
+
+.Messages.clearfix
+  .Messages__user_top
+    test-user
+  .Messages__date_top
+    2019/6/30(Sun)12:13:00
+  .Messages__text
+    こんにちは！
+  .Messages__user
+    test-user
+  .Messages__date
+    2019/6/30(Sun)12:15:00
+  .Messages__text
+    さようなら！
+
+  .Footer
+    %form.Footer__content{action: "", method: "post"}
+      .Footer__cotent__mask
+        %label.Footer__content__mask__upload-label{for: "upload-icon"}
+          %i.fa.fa-picture-o
+          %input.Footer__content__mask__upload-label__file{type: "file", name: "upload-icon"}      
+      %input.Footer__content__text{type: "text", name: "text_message", placeholder: "type a message"}
+      %input.Footer__content__submit{type: "submit", value: "Send"}
+
+
