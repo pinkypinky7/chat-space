@@ -30,7 +30,15 @@
       #chat-group-users
         .chat-group-user.clearfix{id: "chat-group-user-#{current_user.id}"} 
           %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
-            %p.chat-group-user__name= current_user.name
+            %p.chat-group-user__name
+            = current_user.name
+        - @group.users[1..-1].each do |user|
+          .chat-group-user.clearfix.js-chat-member#chat-group-user-8
+            %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}
+              %p.chat-group-user__name
+                =user.name
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+
       /  以下のデフォルトのチャットメンバー（自分）のHTML要素を、上記のようにHamlに変換済み
       /  <div id='chat-group-users'>
       /  <div class='chat-group-user clearfix' id='chat-group-user-22'>
@@ -39,7 +47,6 @@
       /  </div>
       /  </div>
 
-      
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
