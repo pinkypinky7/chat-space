@@ -93,7 +93,10 @@ $(document).on('turbolinks:load', function(){
         
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる   
         messages.forEach( function(message){
-          if ( message.image ) {
+         
+            
+            message.image? var img = <img src=${message.image} ></img> : var img =<img src= "" ></img>
+
             var html =
              `<div class="message" data-id=${message.id}>
                 <div class="upper-message">
@@ -109,27 +112,9 @@ $(document).on('turbolinks:load', function(){
                     ${message.content}
                   </p>
                 </div>
-                <img src=${message.image} >
+                img
               </div>`
-          } else {
-            var html =
-             `<div class="message" data-id=${message.id}>
-                <div class="upper-message">
-                  <div class="upper-message__user-name">
-                    ${message.user_name}
-                  </div>
-                  <div class="upper-message__date">
-                    ${message.date}
-                  </div>
-                </div>
-                <div class="lower-message">
-                  <p class="lower-message__content">
-                    ${message.content}
-                  </p>
-                </div>
-                <img src= "" >
-              </div>`   
-          };
+          
           insertHTML += html
         })
           
