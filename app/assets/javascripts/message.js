@@ -95,7 +95,7 @@ $(document).on('turbolinks:load', function(){
         messages.forEach( function(message){
          
             
-            message.image? var img = <img src=${message.image} ></img> : var img =<img src= "" ></img>
+            message.image? var img = `<img src=${message.image} ></img>` : var img =`<img src= "" ></img>`
 
             var html =
              `<div class="message" data-id=${message.id}>
