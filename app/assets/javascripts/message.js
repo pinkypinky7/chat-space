@@ -35,6 +35,7 @@ $(document).on('turbolinks:load', function(){
               ${message.content}
             </p>
           </div>
+          <img src= "" >
         </div>`
       return html;
     };
@@ -126,6 +127,7 @@ $(document).on('turbolinks:load', function(){
                     ${message.content}
                   </p>
                 </div>
+                <img src= "" >
               </div>`   
           };
           insertHTML += html
@@ -139,7 +141,7 @@ $(document).on('turbolinks:load', function(){
         }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   }
   };
