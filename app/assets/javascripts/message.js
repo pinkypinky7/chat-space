@@ -65,10 +65,6 @@ $(document).on('turbolinks:load', function(){
     });
     return false;
   });
-
- 
- 
- 
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message:last').data('id')
@@ -92,7 +88,7 @@ $(document).on('turbolinks:load', function(){
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる   
         messages.forEach( function(message){
           
-          message.image? var img = `<img src=${message.image} ></img>` : var img =`<img src= "" ></img>`
+          var img = message.image?  `<img src=${message.image}></img>` : "";
             
             var html =
              `<div class="message" data-id=${message.id}>
@@ -109,7 +105,7 @@ $(document).on('turbolinks:load', function(){
                     ${message.content}
                   </p>
                 </div>
-                img
+                ${img}
               </div>`
           
           insertHTML += html
