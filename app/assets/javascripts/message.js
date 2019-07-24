@@ -87,16 +87,13 @@ $(document).on('turbolinks:load', function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-    
         //追加するHTMLの入れ物を作る
         var insertHTML = '';
-        
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる   
         messages.forEach( function(message){
-         
+          
+          message.image? var img = `<img src=${message.image} ></img>` : var img =`<img src= "" ></img>`
             
-            message.image? var img = `<img src=${message.image} ></img>` : var img =`<img src= "" ></img>`
-
             var html =
              `<div class="message" data-id=${message.id}>
                 <div class="upper-message">
